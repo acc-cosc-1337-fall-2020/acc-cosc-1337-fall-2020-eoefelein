@@ -1,0 +1,3 @@
+C:\Users\oefel\Desktop\ACC_Programming_Fundamentals_II\acc-cosc-1337-fall-2020-eoefelein>"C:\Users\oefel\Desktop\ACC_Programming_Fundamentals_II\acamentals_II\acc-cosc-1337-fall-2020-eoefelein\build\test\homework_test\01_variables_test\hw_01_tests.exe"
+===============================================================================
+All tests passed (3 assertions in 2 test cases)
