@@ -1,0 +1,12 @@
+C:\Users\oefel\Desktop\ACC_Programming_Fundamentals_II\acc-cosc-1337-fall-2020-eoefelein>"C:\Users\oefel\Desktop\ACC_Programming_Fundamentals_II\acc-cosc-1337-fall-2020-eoefelein\build\test\homework_test\01_variables_test\hw_01_tests.exe"
+===============================================================================
+All tests passed (7 assertions in 4 test cases)
+
+
+C:\Users\oefel\Desktop\ACC_Programming_Fundamentals_II\acc-cosc-1337-fall-2020-eoefelein>"C:\Users\oefel\Desktop\ACC_Programming_Fundamentals_II\acc-cosc-1337-fall-2020-eoefelein\build\src\homework\01_variables\hw_01_exe.exe"
+Enter the meal amount: 20
+Enter the tip rate: .15
+Meal Amount:    20
+Sales Tax:      1.35
+Tip Amount:     3
+Total:          24.35
