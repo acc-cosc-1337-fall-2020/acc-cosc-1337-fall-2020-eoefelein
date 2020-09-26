@@ -1,1 +1,4 @@
 language = "cpp"
+run="mkdir -p ../build; cd ../build; cmake ../acc-cosc-1337-fall-2020-eoefelein/; make; cd src/classwork/01_assign; ./cw_03_exe;"
+
+run="export CC=clang; export CXX=clang++; rm -rf ../build; mkdir -p ../build; cd ../build; cmake ../acc-cosc-1337-fall-2020-yourusername/; make; cd test/classwork_test/01_assign_test; ./cw_01_tests -s;"
