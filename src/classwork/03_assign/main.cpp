@@ -1,5 +1,5 @@
 //Write the include statement for decision.h here
-#include decision.h;
+#include "decision.h"
 
 //Write namespace using statements for cout and cin
 #include <iostream> 
@@ -17,7 +17,7 @@ int main()
     cout<<"grade for"<<grade<<"using switch is"<<get_letter_grade_using_switch(grade)<<"\n";
   }
   else{
-    cout<<"Number grade is out of specified range of 0-100"
+    cout<<"Number grade is out of specified range of 0-100";
   }
 	return 0;
 }
