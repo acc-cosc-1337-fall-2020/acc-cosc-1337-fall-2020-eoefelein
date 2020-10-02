@@ -6,15 +6,15 @@
 //get_letter_grade_using_if
 char get_letter_grade_using_if(int grade){
   if (grade < 60){
-    return "F";
+    return 'F';
   } else if (grade <= 70){
-    return "D";
+    return 'D';
   } else if (grade <= 80){
-    return "C";
+    return 'C';
   } else if (grade <= 90){
-    return "B";
+    return 'B';
   } else {
-    return "A";
+    return 'A';
   }
 }
 
@@ -38,8 +38,15 @@ char get_letter_grade_using_switch(int grade){
     case 6:
       result='D';
       break;
-    default:
+    case 5:
+    case 4:
+    case 2:
+    case 1:
+    case 0:
       result='F';
+      break;
+    default:
+      result='I';
       break;
   }
   return result;
