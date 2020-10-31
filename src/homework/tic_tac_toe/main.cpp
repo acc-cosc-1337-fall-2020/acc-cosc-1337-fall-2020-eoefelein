@@ -10,6 +10,10 @@ int main()
 {
 	TicTacToe game;
 	string first_player;
+	char choice;
+	string winner;
+
+	do{
 
 	cout<<"Hope you're ready to play some tictactoe! \nPlease enter first player, \"X\" or \"O\": ";
 	cin>>first_player;
@@ -24,9 +28,21 @@ int main()
 		
 		game.mark_board(position);
 		game.display_board();
-	} while(game.game_over() == false);
+		}while (game.game_over() == false);
+
+		if (game.get_winner() == "C")
+		{
+			cout<<"\nThe match is a Draw\n";
+		}
+		else
+		{cout<<"\nThe Winner of the game is: "<<game.get_winner()<<"\n";}
+		
+		cout<<"\nIf you want to continue playing, enter Y or y.\n";
+		cout<<"Otherwise, enter any key to exit.\n";
+		cin>>choice;
+	}while(choice == 'Y' || choice == 'y');
 	
-	cout<<"Game over!";
+	cout<<"\nGame over!";
 	return 0;
 	
 }
