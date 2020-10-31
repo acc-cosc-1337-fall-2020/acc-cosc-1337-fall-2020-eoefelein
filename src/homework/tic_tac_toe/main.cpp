@@ -18,6 +18,12 @@ int main()
 	cout<<"Hope you're ready to play some tictactoe! \nPlease enter first player, \"X\" or \"O\": ";
 	cin>>first_player;
 
+	while (!(first_player == "X" || first_player == "O"))
+		{
+			cout<< "Invalid input. Please enter X or O: \n";
+			cin>> first_player;
+		}
+
 	game.start_game(first_player);
 	
 	do
@@ -35,7 +41,9 @@ int main()
 			cout<<"\nThe match is a Draw\n";
 		}
 		else
-		{cout<<"\nThe Winner of the game is: "<<game.get_winner()<<"\n";}
+		{
+			cout<<"\nThe Winner of the game is: "<<game.get_winner()<<"\n";
+		}
 		
 		cout<<"\nIf you want to continue playing, enter Y or y.\n";
 		cout<<"Otherwise, enter any key to exit.\n";
