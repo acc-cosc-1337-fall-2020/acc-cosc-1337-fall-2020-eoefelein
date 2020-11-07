@@ -6,6 +6,20 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
+TEST_CASE("Verify start_game correctly sets first player to X")
+{
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE(game.get_player() == "X");
+}
+
+TEST_CASE("Verify start_game correctly sets first player to O")
+{
+	TicTacToe game;
+	game.start_game("O");
+	REQUIRE(game.get_player() == "O");
+}
+
 TEST_CASE("Verify game ends when board is full") 
 {	
 	TicTacToe game;

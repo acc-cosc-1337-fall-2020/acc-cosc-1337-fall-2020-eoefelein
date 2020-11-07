@@ -7,7 +7,9 @@
 using std::vector;
 using std::string;
 using std::cout;
+using std::ostream;
 using std::cin;
+using std::istream;
 using std::endl;
 
 TicTacToe game;
@@ -16,7 +18,7 @@ TicTacToe game;
 void TicTacToe::mark_board(int position)
 {
   slots[position-1] = next_player;
-  set_next_player();
+  TicTacToe::set_next_player();
 }
 
 // 1) first_player function argument value must be X or O
@@ -30,6 +32,7 @@ void TicTacToe::start_game(string first_player)
 }
 
 // iterate vector of strings slots to display tic tac toe board
+/*
 void TicTacToe::display_board() const
 {
    for (std::size_t i = 0; i < slots.size(); i += 3) 
@@ -40,6 +43,7 @@ void TicTacToe::display_board() const
 
    return;
 }
+*/
         
 // set player. if private variable player X player is O else player is X
 void TicTacToe::set_next_player()
@@ -149,3 +153,33 @@ void TicTacToe::set_winner()
     winner = "X"; 
   }
 }
+
+std::istream& operator >> (std::istream& input, TicTacToe& game) // also returning a TicTacToe obj
+{
+    int position;
+
+    cout<<"\n\nPlayer "<<game.get_player()<<", make your move! Choose an empty slot by entering a number between 1 & 9:\n";
+	  input>>position;
+	  while(position < 1 || position > 9)
+    {
+		cout<<"\nYour entry is invalid. Please choose an empty slot by entering a number between 1 & 9: \n";
+		input>>position;
+    }
+    
+    game.mark_board(position);
+
+    return input;
+}
+
+// this is going to return an ostream obj, because cout is an obj of type ostream
+std::ostream& operator << (std::ostream& output, const TicTacToe game) // also returning a TicTacToe obj
+{
+  for (std::size_t i = 0; i < game.slots.size(); i += 3) 
+  {
+    output << " " << game.slots.at(i) << "  |  " << game.slots.at(i + 1) << "  |  " << game.slots.at(i + 2) << " " << endl;
+  }
+  cout << endl;
+
+  return output;
+}
+
