@@ -1,25 +1,31 @@
 //h
-#include <string>
-#include <iostream>
-#include <vector>
-
-#include "tic_tac_toe.h"
 
 // header guard
 #ifndef TIC_TAC_TOE_MANAGER_H
 #define TIC_TAC_TOE_MANAGER_H
 
+#include <string>
+#include <iostream>
+#include <vector>
+#include <memory>
+
+#include "tic_tac_toe.h"
+
 using std::ostream;
 using std::vector;
+using std::unique_ptr;
 
 class TicTacToeManager
 {
     public:
-        void save_game(const TicTacToe b);
+        //TicTacToeManager() = default;
+        // unique_ptr of TicTacToe reference
+        void save_game(unique_ptr<TicTacToe> &game);
         friend ostream& operator << (std::ostream& output, const TicTacToeManager& m);
         void get_winner_total();
     private:
-        vector <TicTacToe> games{};
+        // vector of reference wrapper TicTacToe
+        vector<unique_ptr<TicTacToe> > games;
         int x_win = 0;
         int o_win = 0;
         int ties = 0;
