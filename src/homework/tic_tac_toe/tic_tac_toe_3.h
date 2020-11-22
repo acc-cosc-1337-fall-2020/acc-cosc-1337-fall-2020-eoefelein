@@ -9,7 +9,6 @@ class TicTacToe3 : public TicTacToe
     public:
         TicTacToe3() : TicTacToe(3) {};
         TicTacToe3(vector<string> s, string winner) : TicTacToe(s, winner) {};
-        // virtual ~TicTacToe3() {};
 
     private:
         bool check_column_win();

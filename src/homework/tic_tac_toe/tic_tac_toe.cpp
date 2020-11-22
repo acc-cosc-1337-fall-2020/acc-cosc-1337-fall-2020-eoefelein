@@ -32,20 +32,6 @@ void TicTacToe::mark_board(int position)
   slots[position-1] = next_player;
   TicTacToe::set_next_player();
 }
-
-// iterate vector of strings slots to display tic tac toe board
-/*
-void TicTacToe::display_board() const
-{
-   for (std::size_t i = 0; i < slots.size(); i += 3) 
-   {
-      cout << " " << slots.at(i) << "  |  " << slots.at(i + 1) << "  |  " << slots.at(i + 2) << " " << endl;
-   }
-   cout << endl;
-
-   return;
-}
-*/
         
 // set player. if private variable player X player is O else player is X
 void TicTacToe::set_next_player()
@@ -102,42 +88,18 @@ void TicTacToe::set_winner()
 // checks colum win
 bool TicTacToe::check_column_win()
 {
-  // for(std::size_t i = 0; i < 3; ++ i)
-  // if((slots[i] == slots[i+3] && slots[i+3] == slots[i+6]) && (slots[i] != " "))
-  // {
-  //   return true;
-  // }
   return false;
 }
 
 // checks row win
 bool TicTacToe::check_row_win()
 {
-  // for(std::size_t i = 0; i < 7; i += 3)
-  // if((slots[i] == slots[i+1] && slots[i+1] == slots[i+2]) && (slots[i] != " "))
-  // {
-  //   return true;
-  // }
   return false;
 }
 
 // checks diagonal win
 bool TicTacToe::check_diagonal_win()
 {
-    // if(slots[0] == slots[4] && slots[4] == slots[8])
-    // {
-    //     if(slots[4] != " ")
-    //     {
-    //         return true;
-    //     }
-    // }
-    // else if(slots[2] == slots[4] && slots[4] == slots[6])
-    // {
-    //    if(slots[4] != " ")
-    //     {
-    //         return true;
-    //     }
-    // }
     return false;
 }
 
@@ -225,4 +187,3 @@ std::istream& operator >> (std::istream& input, TicTacToe& game) // also returni
 
     return input;
 }
-
