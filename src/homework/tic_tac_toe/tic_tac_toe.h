@@ -7,8 +7,6 @@
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
 
-using std::unique_ptr;
-using std::make_unique;
 using std::string;
 using std::vector;
 using std::cout;
@@ -16,18 +14,19 @@ using std::cout;
 class TicTacToe
 {
     public:
-      TicTacToe(vector<string> s, string win) : slots{s}, winner{win} {};
-    // create a constructor with int param named size, 
-    // use initializer list to initialize the vector to 9 or 16 elements
+      TicTacToe() = default;
+      // create a constructor with int param named size, 
+      // use initiaSlizer list to initialize the vector to 9 or 16 elements
       TicTacToe(int size) : slots(size*size, " ") {};
-      //TicTacToe(vector<string> s, string win) : slots{s}, winner{win} {};
-
+      TicTacToe(vector<string> s, string win) : slots{s}, winner{win} {};
+      
       bool game_over();
       void mark_board(int position);
       void start_game(string first_player);
       string get_player() const;
       // homework 7
       string get_winner() { return winner; };
+      // const class function get_pegs that returns a vector of strings
       vector<string> get_slots() const;
       // friend functions
       friend std::ostream& operator << (std::ostream& output, const TicTacToe& t);
@@ -45,10 +44,9 @@ class TicTacToe
       void set_winner();
       void set_next_player();
       bool check_board_full();
+      void clear_board();
       // private variables
       string winner;
-
-      void clear_board();
 };
 
 class Error
